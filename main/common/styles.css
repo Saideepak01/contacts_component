@@ -1,0 +1,40 @@
+.titleWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.buttonColor {
+  color: var(--bg-base-purple);
+}
+
+.titleWrapper > div {
+  font-size: var(--font-medium);
+  font-weight: var(--font-weight-600);
+  color: var(--dark-blue);
+  margin-inline-end: var(--margin-mini);
+}
+
+.titleWrapper > span {
+  font-size: var(--font-extra-medium);
+  font-weight: var(--font-weight-500);
+  color: var(--dark-gray);
+}
+
+.cardActions {
+  margin-left: auto;
+}
+
+.buttonTextWrap {
+  display: flex;
+  align-items: center;
+  padding-inline-start: var(--mini) !important;
+  padding-inline-end: var(--small) !important;
+}
+
+.buttonWrapContainer {
+  display: flex;
+}
+
+.dropDown, .inputTags {
+  margin-block-end: var(--small);
+}

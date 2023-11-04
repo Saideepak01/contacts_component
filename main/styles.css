@@ -1,0 +1,93 @@
+.mainContainerWrapper {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.userNameContainer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1.4rem 1fr;
+  align-items: center;
+}
+
+.nameProfileCell {
+  margin-inline-start: var(--small);
+  display: grid;
+}
+
+.userDetails {
+  font-size: var(--font-small);
+  font-weight: var(--font-weight-500);
+  max-width: 90px !important;
+}
+
+.userRole {
+  font-size: var(--font-small);
+  color: var(--dark-gray);
+  max-width: 90px !important;
+}
+
+.sourceValueContainer {
+  display: grid;
+  align-items: center;
+  justify-content: start;
+  grid-auto-flow: column;
+  grid-template-columns: 26px 1fr;
+}
+
+.sourceIcons {
+  display: grid;
+  margin-inline-end: var(--small);
+}
+
+.emailContainer {
+  max-width: 150px;
+  font-size: var(--font-small);
+  font-weight: var(--font-weight-500);
+}
+
+.actionButtons {
+  display: grid;
+  grid-auto-flow: column;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.dropDown,
+.inputTags {
+  margin-block-end: var(--small);
+}
+
+.footerButton {
+  display: flex;
+  align-items: center;
+}
+
+.footerText {
+  color: var(--bg-base-purple);
+}
+
+.footerButton {
+  display: flex;
+  align-items: center;
+}
+
+.lineBreak {
+  border: 0.5px solid var(--light-gray);
+}
+
+.optionalText {
+  color: var(--dark-gray);
+  font-size: var(--font-small);
+  margin-block-end: var(--small);
+}

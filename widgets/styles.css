@@ -1,0 +1,12 @@
+.buttonTextStyle:hover {
+  background-color: var(--bg-extra-light-purple) !important;
+}
+
+.buttonTextStyle:active {
+  background-color: var(--bg-light-purple) !important;
+}
+
+.labelStyle {
+  font-size: var(--font-small);
+  font-weight: var(--font-weight-500);
+}
