@@ -324,15 +324,15 @@ export function AddCustomerContactDetails({
         width={400}
         footer={[
           <Button
-            key="cancel"
+            key={BUTTON_TEXT_NAMES.CANCEL}
             type={BUTTON_TYPE.LINK}
-            buttonText={"Cancel"}
+            buttonText={BUTTON_TEXT_NAMES.CANCEL}
             onClick={handleOnCancel}
           />,
           <Button
-            key="save"
+            key={BUTTON_TEXT_NAMES.SAVE}
             type={BUTTON_TYPE.PRIMARY}
-            buttonText={"Save"}
+            buttonText={BUTTON_TEXT_NAMES.SAVE}
             onClick={() => handleOnSave(internalFormStates)}
           />,
         ]}
