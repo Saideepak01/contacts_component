@@ -15,7 +15,7 @@ export function InputTags({
   className,
   errorStatus,
 }) {
-  console.log(errorStatus)
+
   return (
     <Input
       type={type}

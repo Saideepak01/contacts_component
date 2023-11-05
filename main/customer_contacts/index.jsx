@@ -16,6 +16,7 @@ import {
 } from "../../widgets/index.jsx";
 import userNames from "../userNames.json";
 import Title from "../common/title.jsx";
+import { ContactsCount } from "../common/contact.count.jsx";
 import {
   notificationMessage,
   isValidPhoneNumber,
@@ -143,6 +144,8 @@ export function CustomerContacts({ onDataModify, onDataAddition }) {
                   onCancel,
                   title: "Are you sure ?",
                   content: `Do you really want to delete the contact ${record.user_name}`,
+                  cancelButtonText: BUTTON_TEXT_NAMES.CANCEL,
+                  saveButtonText: BUTTON_TEXT_NAMES.CONFIRM,
                 });
               }}
               icon={<DeleteIcon />}
@@ -165,6 +168,11 @@ export function CustomerContacts({ onDataModify, onDataAddition }) {
 
   function onConfirm(record) {
     onDataModify(customerData, record, true, DATA_TYPE.CUSTOMER_DATA);
+    openNotification(
+      NOTIFICATION_KEYS.SUCCESS,
+      "Success",
+      `The contact ${record.user_name} has been deleted`
+    );
     onCancel();
   }
 
@@ -261,8 +269,9 @@ export function CustomerContacts({ onDataModify, onDataAddition }) {
       <ContainerWrapper
         Title={() =>
           Title({
-            title: "Customer contacts",
-            TitleRender: () => <span>({customerData.length})</span>,
+            TitleRender: () => (
+              <ContactsCount title="Customer data" data={customerData} />
+            ),
           })
         }
         Footer={() => {

@@ -8,7 +8,8 @@ export default function ContainerWrapper({ children, Title, Footer }) {
       <Title />
       <hr className={styles.lineBreak} />
       {children}
-      <div className={styles.footerWrap}>
+      <hr className={styles.lineBreak} />
+      <div>
         {Footer && <Footer />}
       </div>
     </div>

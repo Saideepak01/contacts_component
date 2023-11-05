@@ -16,14 +16,7 @@ export function DropDown({
   errorStatus,
 }) {
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: "#531CAB",
-          borderRadius: 4,
-        },
-      }}
-    >
+    <>
       <div className={styles.labelStyle}>{title}</div>
       <AntSelect
         defaultValue={defaultValue}
@@ -43,6 +36,6 @@ export function DropDown({
             </AntSelect.Option>
           ))}
       </AntSelect>
-    </ConfigProvider>
+    </>
   );
 }

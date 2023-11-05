@@ -39,29 +39,19 @@ export function Button({
   buttonToolTip,
 }) {
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: "#531CAB",
-          borderRadius: 4,
-          colorLink: "#531CAB",
-        },
-      }}
-    >
-      <Tooltip title={buttonToolTip}>
-        <AntButton
-          type={type}
-          icon={icon}
-          shape={BUTTON_SHAPE[shape]}
-          className={`${className} ${styles[BUTTON_STYLE[type]]}`}
-          onClick={onClick}
-          size={size}
-        >
-          {buttonText && (
-            <span className={buttonTextClassName}>{buttonText}</span>
-          )}
-        </AntButton>
-      </Tooltip>
-    </ConfigProvider>
+    <Tooltip title={buttonToolTip}>
+      <AntButton
+        type={type}
+        icon={icon}
+        shape={BUTTON_SHAPE[shape]}
+        className={`${className} ${styles[BUTTON_STYLE[type]]}`}
+        onClick={onClick}
+        size={size}
+      >
+        {buttonText && (
+          <span className={buttonTextClassName}>{buttonText}</span>
+        )}
+      </AntButton>
+    </Tooltip>
   );
 }

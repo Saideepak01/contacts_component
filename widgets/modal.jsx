@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import { Modal as AntModal, ConfigProvider } from "antd";
-import { Button } from "./button";
+import { Button, BUTTON_TYPE } from "./button";
 
 export function Modal({
   title,
@@ -10,45 +10,55 @@ export function Modal({
   handleOnCancel,
   footer = null,
   children,
-  width
+  width,
 }) {
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          borderRadius: 4,
-        },
-      }}
+    <AntModal
+      title={title}
+      open={isModalOpen}
+      onOk={handleOnSave}
+      onCancel={handleOnCancel}
+      footer={footer}
+      width={width}
+      destroyOnClose={true}
     >
-      <AntModal
-        title={title}
-        open={isModalOpen}
-        onOk={handleOnSave}
-        onCancel={handleOnCancel}
-        footer={footer}
-        width={width}
-        destroyOnClose={true}
-      >
-        {children}
-      </AntModal>
-    </ConfigProvider>
+      {children}
+    </AntModal>
   );
 }
 
-export const confirmModal = ({ onConfirm, onCancel, title, content }) => {
+export const confirmModal = ({
+  onConfirm,
+  onCancel,
+  title,
+  content,
+  cancelButtonText,
+  saveButtonText,
+}) => {
   return AntModal.confirm({
     title,
     content,
     footer: () => (
-      <>
-        <Button buttonText="Cancel" onClick={onCancel} />
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#531CAB",
+            borderRadius: 4,
+            colorLink: "#531CAB",
+          },
+        }}
+      >
         <Button
-          type="primary"
-          buttonText="Confirm"
-          size="medium"
+          type={BUTTON_TYPE.LINK}
+          buttonText={cancelButtonText}
+          onClick={onCancel}
+        />
+        <Button
+          type={BUTTON_TYPE.PRIMARY}
+          buttonText={saveButtonText}
           onClick={onConfirm}
         />
-      </>
+      </ConfigProvider>
     ),
   });
 };

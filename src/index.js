@@ -13,6 +13,7 @@ root.render(
       token: {
         colorPrimary: "#531CAB",
         borderRadius: 4,
+        colorLink: "#531CAB",
       },
     }}
   >

@@ -12,6 +12,7 @@ import {
   InternalContactForm,
 } from "../internal_contacts/internal.details.jsx";
 import Title from "../common/title.jsx";
+import { ContactsCount } from "../common/contact.count.jsx";
 import userNames from "../userNames.json";
 import {
   ErrorBoundary,
@@ -22,7 +23,11 @@ import {
   BUTTON_SHAPE,
 } from "../../widgets/index.jsx";
 import { validateEmail, notificationMessage } from "../utils/helper.js";
-import { NOTIFICATION_KEYS, DATA_TYPE, BUTTON_TEXT_NAMES } from "../utils/contants.js";
+import {
+  NOTIFICATION_KEYS,
+  DATA_TYPE,
+  BUTTON_TEXT_NAMES,
+} from "../utils/contants.js";
 
 import styles from "../styles.css";
 
@@ -42,8 +47,6 @@ export function InternalContacts({ onDataModify, onDataAddition }) {
     dropDownValue: "",
     emailValue: "",
   });
-
-  const contactsCount = () => <span>(8)</span>;
 
   const contactTableState = {
     userNamesDropDown,
@@ -122,7 +125,7 @@ export function InternalContacts({ onDataModify, onDataAddition }) {
       title: "Source value",
       dataIndex: CONTACT_DATA_KEYS.SOURCE_VALUE,
       key: CONTACT_DATA_KEYS.SOURCE_VALUE,
-      width: 150,
+      width: 160,
       render: (name, record) => {
         return (
           <ContactsRenderer
@@ -161,6 +164,8 @@ export function InternalContacts({ onDataModify, onDataAddition }) {
                   onCancel,
                   title: "Are you sure ?",
                   content: `Do you really want to delete the contact ${record.user_name}`,
+                  cancelButtonText: BUTTON_TEXT_NAMES.CANCEL,
+                  saveButtonText: BUTTON_TEXT_NAMES.CONFIRM,
                 });
               }}
               icon={<DeleteIcon />}
@@ -218,8 +223,8 @@ export function InternalContacts({ onDataModify, onDataAddition }) {
         internalData,
         {
           ...formValues,
-          source_value: tags,
-          email: emailValue,
+          source_value: inputValue.tags,
+          email: inputValue.emailValue,
         },
         false,
         DATA_TYPE.INTERNAL_DATA
@@ -265,7 +270,11 @@ export function InternalContacts({ onDataModify, onDataAddition }) {
     <ErrorBoundary>
       <ContainerWrapper
         Title={() =>
-          Title({ title: "Internal contacts", TitleRender: contactsCount })
+          Title({
+            TitleRender: () => (
+              <ContactsCount title="Internal data" data={internalData} />
+            ),
+          })
         }
         Footer={() => {
           return (

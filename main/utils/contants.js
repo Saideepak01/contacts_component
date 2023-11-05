@@ -20,5 +20,6 @@ export const BUTTON_TEXT_NAMES = {
   SAVE: "Save",
   CANCEL: "Cancel",
   EDIT: "Edit",
-  DELETE: "Delete"
+  DELETE: "Delete",
+  CONFIRM: "Confirm"
 }

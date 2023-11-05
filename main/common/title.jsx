@@ -6,9 +6,9 @@ import styles from "./styles.css";
 
 export default function Title({ title, TitleRender, Icon, tooltipText }) {
   return (
-    <div className={styles.titleWrapper}>
-      <div>{title}</div>
-      <TitleRender />
+    <div>
+      {title && <div>{title}</div>}
+      {TitleRender && <TitleRender />}
       {Icon && (
         <div className={styles.cardActions}>
           <Tooltip title={tooltipText}>

@@ -40,7 +40,7 @@ export function ContactsTable({
           onMouseEnter: () => handleMouseEnter(record),
           onMouseLeave: handleMouseLeave,
         })}
-        size={TABLE_SIZE.SMALL}
+        size={TABLE_SIZE.small}
         tableStyle={{ width: "600px", height: "355px" }}
         scroll={{
           x: 200,

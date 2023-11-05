@@ -1,5 +1,3 @@
-import React from "react";
-
 import { notification as AntNotfication } from "antd";
 
 export function Notification() {
