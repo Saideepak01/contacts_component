@@ -205,16 +205,6 @@ export function InternalContacts({ onDataModify, onDataAddition }) {
     setIsShowModal(false);
   }
 
-  function resetData() {
-    setUserNamesDropDown("");
-    setInputValue({
-      tags: [],
-      emailValue: "",
-      dropDownValue: "",
-    });
-    setIsShowModal(false);
-  }
-
   function handleOnSaveData(formValues, updatedData) {
     const { inputValue } = updatedData;
 
@@ -229,8 +219,8 @@ export function InternalContacts({ onDataModify, onDataAddition }) {
         false,
         DATA_TYPE.INTERNAL_DATA
       );
-      resetData();
     }
+    onClose();
   }
 
   function handleAddData(data) {
@@ -248,9 +238,9 @@ export function InternalContacts({ onDataModify, onDataAddition }) {
         },
         DATA_TYPE.INTERNAL_DATA
       );
-      resetData();
-      setIsFooterModalOpen(false);
     }
+    setIsFooterModalOpen(false);
+    onClose();
   }
 
   function validateFields(inputValue) {

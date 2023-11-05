@@ -8,7 +8,7 @@
     "company": "Jabbercube",
     "source_type": "auto",
     "role": "Marketing",
-    "source_value": ["Sales Rep", "test", "zoom"]
+    "source_value": ["Sales Rep"]
   },
   {
     "_id": "01HEA6P2Z1BGX9FC4MB7PN5C9E",
@@ -217,7 +217,7 @@
     "company": "Thoughtbridge",
     "source_type": "manual",
     "role": "Marketing",
-    "source_value": ["Sales Rep"]
+    "source_value": ["Sales Rep", "KAM"]
   },
   {
     "_id": "01HEA6P303JHQR5P3Z5T5ETG8C",
@@ -239,7 +239,7 @@
     "company": "Jayo",
     "source_type": "integrations",
     "role": "SDR",
-    "source_value": ["Sales Rep"]
+    "source_value": ["Sales Rep", "Account Manager"]
   },
   {
     "_id": "01HEA6P306K2J8M104DT9MCBV2",

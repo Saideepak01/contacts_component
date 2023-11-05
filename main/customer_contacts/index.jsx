@@ -193,18 +193,6 @@ export function CustomerContacts({ onDataModify, onDataAddition }) {
     setIsShowModal(false);
   }
 
-  function resetData() {
-    setContactTypeDropDown("");
-    setSelectedRecord("");
-    setInputValue({
-      name: "",
-      emailValue: "",
-      contactTypeDropdownValue: "",
-      jobTitle: "",
-      phoneNumber: "",
-    });
-    setIsShowModal(false);
-  }
 
   function handleOnSaveData(formValues, updatedData) {
     const { inputValue } = updatedData;
@@ -222,7 +210,7 @@ export function CustomerContacts({ onDataModify, onDataAddition }) {
         false,
         DATA_TYPE.CUSTOMER_DATA
       );
-      resetData();
+      onClose();
     }
   }
 
@@ -243,7 +231,7 @@ export function CustomerContacts({ onDataModify, onDataAddition }) {
         },
         DATA_TYPE.CUSTOMER_DATA
       );
-      resetData();
+      onClose();
       setIsFooterModalOpen(false);
     }
   }
