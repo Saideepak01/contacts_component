@@ -16,28 +16,24 @@ export function Tag({ tags, handleTagClose, closable, multiTag, color }) {
   let combinedTag = otherTags.length >= 1 ? `+${otherTags.length}` : "";
 
   return !multiTag ? (
-    <>
-      {tags.map((tag) => (
-        <AntTag
-          key={tag}
-          closable={closable}
-          color={TAG_COLOR[color]}
-          onClose={() => handleTagClose(tag)}
-        >
-          {tag}
-        </AntTag>
-      ))}
-    </>
-  ) : (
-    <>
-      <Tooltip
-        title={combinedTag > 1 && otherTags.map((item) => <div>{item}</div>)}
+    tags.map((tag) => (
+      <AntTag
+        key={tag}
+        closable={closable}
+        color={TAG_COLOR[color]}
+        onClose={() => handleTagClose(tag)}
       >
-        <AntTag key={firstTag} closable={closable}>
-          {firstTag} <br />
-          {combinedTag > 1 && `${combinedTag}`}
-        </AntTag>
-      </Tooltip>
-    </>
+        {tag}
+      </AntTag>
+    ))
+  ) : (
+    <Tooltip
+      title={combinedTag > 1 && otherTags.map((item) => <div>{item}</div>)}
+    >
+      <AntTag key={firstTag} closable={closable}>
+        {firstTag} <br />
+        {combinedTag > 1 && `${combinedTag}`}
+      </AntTag>
+    </Tooltip>
   );
 }

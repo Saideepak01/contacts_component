@@ -196,7 +196,7 @@ export function InternalContacts({ onDataModify, onDataAddition }) {
   }
 
   function onClose() {
-    setUserNamesDropDown("");
+    setUserNamesDropDown([]);
     setInputValue({
       tags: [],
       emailValue: "",

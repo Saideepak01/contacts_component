@@ -56,6 +56,7 @@ export function ContactsRenderer({ name, record, type }) {
       );
     }
     case CONTACT_DATA_KEYS.SOURCE_VALUE: {
+      let nameArray = typeof name === "string" ? [name] : name;
       return (
         <div className={styles.sourceValueContainer}>
           <div className={styles.sourceIcons}>
@@ -63,9 +64,9 @@ export function ContactsRenderer({ name, record, type }) {
           </div>
           <div>
             <Tag
-              tags={name}
+              tags={nameArray}
               closable={false}
-              color={TAG_TYPE[name[0].toLowerCase()]}
+              color={TAG_TYPE[nameArray[0].toLowerCase()]}
             />
           </div>
         </div>
